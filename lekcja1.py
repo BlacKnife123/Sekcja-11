@@ -13,3 +13,30 @@ randint(0,4) [0,4]"""
 
 
 import random
+
+
+def will_wepon_hit(weaponChanceToHitPercentage):
+    isHitChance = random.uniform(0,100)
+    if (isHitChance < weaponChanceToHitPercentage):
+        return "hit"
+    else:
+        return "not hit"
+
+
+x = 0
+listHit = []
+while x < 100:
+    x+=1
+    listHit.append(will_wepon_hit(50))
+
+print(listHit.count("hit"))
+print(listHit.count("not hit"))
+
+
+
+from collections import Counter
+
+dictionaryHit = Counter(listHit)
+
+print(dictionaryHit)
+
