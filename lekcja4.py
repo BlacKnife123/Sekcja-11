@@ -1,6 +1,11 @@
 """
 sample - próbka/przykład
 
+# def choose_random_numbers(amount,total_amount):
+#     print(random.sample(range(total_amount + 1),amount))
+
+# choose_random_numbers(6,49)
+
 """
 
 import random
@@ -14,18 +19,30 @@ cardList = ["9","9","9","9",
             "Joker","Joker"]
 
 random.shuffle(cardList)
+firstPlayer  = []
+secondPlayer  = []
+thirdPlayer  = []
+fourthPlayer  = []
+fifthPlayer  = []
 
 
-for i in range(0,25):
-    # card = cardList.pop()
-    if i < 5:
-        firstPlayer  = []
-        firstPlayer.append(cardList[i])
 
-print(firstPlayer)
-print(cardList)
+def give_cards(Player):
+    for i in range(0,25):
+        if i < 5:
+            card = cardList.pop()
+            Player.append(card)
 
-# def choose_random_numbers(amount,total_amount):
-#     print(random.sample(range(total_amount + 1),amount))
+    print("Karty gracza",Player)
 
-# choose_random_numbers(6,49)
+give_cards(firstPlayer)
+give_cards(secondPlayer)
+give_cards(thirdPlayer)
+give_cards(fourthPlayer)
+give_cards(fifthPlayer)
+
+print ("Pozostałe karty",cardList)
+
+
+
+
