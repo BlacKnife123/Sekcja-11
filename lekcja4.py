@@ -19,30 +19,32 @@ cardList = ["9","9","9","9",
             "Joker","Joker"]
 
 random.shuffle(cardList)
-firstPlayer  = []
-secondPlayer  = []
-thirdPlayer  = []
-fourthPlayer  = []
-fifthPlayer  = []
 
+playersDictionary = {
+                        'firstPlayer':[],
+                        'secondPlayer':[],
+                        'thirdPlayer':[],
+                        'fourthPlayer':[],
+                        'fifthPlayer':[],
 
+                    }
 
-def give_cards(Player):
-    for i in range(0,25):
-        if i < 5:
+# Lista graczy
+playerList = list(playersDictionary.keys())
+
+# Funkcja rozdająca karty
+def give_cards(playersDictionary, cardList):
+    for player in playersDictionary:
+        for _ in range(5):
             card = cardList.pop()
-            Player.append(card)
+            playersDictionary[player].append(card)
+        print(f"Karty gracza {player}: {playersDictionary[player]}")
 
-    print("Karty gracza",Player)
+# Rozdaj karty każdemu graczowi
+give_cards(playersDictionary, cardList)
 
-give_cards(firstPlayer)
-give_cards(secondPlayer)
-give_cards(thirdPlayer)
-give_cards(fourthPlayer)
-give_cards(fifthPlayer)
-
-print ("Pozostałe karty",cardList)
-
+# Pozostałe karty
+print("Pozostałe karty w talii:", cardList)
 
 
 
